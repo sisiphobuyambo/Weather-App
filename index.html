@@ -23,11 +23,33 @@
                 </form>
             </div>
 
-            <div class="temp-display-container">
-                <div class="temp-image" id="temp-image"></div>
-                <h1 class="temp-text"><span id="temp-text"> 0</span>°C </h1>
-                <p class="description" id="description"></p>
-                <p class="bold-text city-text" id="city-text">City</p>
+            <div class="temp-display-card">
+                <div class="temp-display-container">
+                    <div class="temp-image" id="temp-image"></div>
+                    <h1 class="temp-text"><span id="temp-text"> 0</span>°C </h1>
+                    <p class="description" id="description"></p>
+                    <div class="city-container">
+                        <img src="Assets/map-pin.svg" alt="Map-pin icon">
+                        <p class="bold-text city-text" id="city-text">City</p>
+                    </div>
+                </div>
+                <div class="detailed-temp-display-container">
+                    <p><span id="temp-text-2"> 0</span>°C feels like <span id="feels-like-temp">0</span>°C</p>
+                    <div class="min-max-temp">
+                        <p>Max-Temp: <span class="max-temp" id="max-temp">0</span>°C</p>
+                        <p>Min-Temp: <span class="min-temp" id="min-temp">0</span>°C</p>
+                    </div>
+                    <div class="sunrise-sunset-container">
+                        <div class="sunrise-container">
+                            <img src="Assets/sunrise.svg" alt="Sunrise icon">
+                            <p class="sunrise">Sunrise: <span id="sunrise"></span></p>
+                        </div>
+                        <div class="sunset-container">
+                            <img src="Assets/sunset.svg" alt="Sunset icon">
+                            <p class="sunset">Sunset: <span id="sunset"></span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="details-display-container">
                 <div class="wind-container">
