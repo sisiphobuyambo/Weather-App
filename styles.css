@@ -1,0 +1,168 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 ;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    /* padding-top: 11%; */
+
+}
+
+.center-web-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55em;
+}
+
+/* //////////////
+LAYOUT
+///////////// */
+
+.weather-app-container {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 30%;
+    min-height: 35em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp-display-container{
+    /* display: flex;
+    justify-content: space-around; */
+    text-align: center;
+    margin: 0 1.5em 1.5em;
+}
+
+.details-display-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.humidity-container{
+    margin-left:1.5em;
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+}
+
+.humidity-container,
+.wind-container{
+    border-radius: 10px;
+    border: 1.5px solid rgba( 255, 255, 255, 0.5 );
+    width: 40%;
+    padding: 1em;
+}
+
+
+input,
+button{
+    padding: 1em;
+    border-radius: 3.125em;
+    border: 1.5px solid rgba( 255, 255, 255, 0.5 );
+    background-color: rgba( 255, 255, 255, 1 );
+}
+
+.search-container,
+.details-display-container
+ {
+    /* border: 1px black solid; */
+    margin: 2.5em 1.5em;
+}
+
+.wind-image-container,
+.humidity-image-container{
+    display: flex;
+    align-items: center;
+}
+
+.wind-image,
+.humidity-image{
+    margin-right: 0.25em;
+    /* border: 1px solid magenta; */
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+.humidity-detail,
+.wind-detail {
+    margin: 0;
+}
+
+
+/* .temp-display-container,
+.details-display-container{
+    display: none;
+} */
+
+
+/* /////////
+TYPOGRAPHY  
+///////////*/
+
+.temp-text,
+.city-text,
+p{
+    color: rgba( 255, 255, 255, 1 );
+}
+
+.temp-text {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.description,
+.city-text {
+    font-size:1.5rem;
+    margin: 0;
+}
+
+.city-text {
+    
+    margin-top: 0.5em;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
+.humidity-detail,
+.wind-detail {
+    font-size: 1.75rem;
+}
+
+/* /////////
+MEDIA QUERY 
+////////////*/
+
+@media (min-width:360px) and (max-width: 675px) {
+
+    .weather-app-container {
+        width: 95%;
+    }
+
+    .search-container{
+        padding: 0;
+        width: 100%;
+    }
+
+    input{
+        width:70%;
+    }
+}
