@@ -4,6 +4,8 @@ const temperature = document.getElementById("temp-text");
 const city = document.getElementById("city-text");
 const windSpeed = document.getElementById("wind-detail");
 const humidity = document.getElementById("humidity-detail");
+const seaLvl = document.getElementById("sea-lvl-detail");
+const pressure = document.getElementById("pressure-detail");
 const tempImg = document.getElementById("temp-image");
 const description = document.getElementById("description");
 const sunrise = document.getElementById("sunrise");
@@ -13,18 +15,20 @@ const feelsLikeTemp = document.getElementById("feels-like-temp");
 const maxTemp = document.getElementById("max-temp");
 const minTemp = document.getElementById("min-temp");
 const apiKey = "30d4c77ab91d7a98a617d76fbef3692a" ;
+const infoDisplayToggle = document.getElementById("info-display-toggle");
+const searchDisplayToggle = document.getElementById("search-location-illustration-container");
+const bkgrndColor = document.getElementById("bkgrnd-color");
+const searchError = document.getElementById("search-error-container"); 
 
-// const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}`;
-
-
-
-searchBtn.addEventListener("click",()=>{
+searchBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`)
         .then(response => {
             if(!response.ok){
                 if(response.status === 404){
                     throw new Error("Data not found")
+
                 } else if(response.status === 500){
                     throw new Error("Server error")
                 }else{
@@ -69,6 +73,9 @@ searchBtn.addEventListener("click",()=>{
 
             sunrise.textContent = convertTimestamptoTime(data.sys.sunrise);
             sunset.textContent = convertTimestamptoTime(data.sys.sunset);
+
+            searchDisplayToggle.style.display = "none";
+            infoDisplayToggle.style.display = "block";
 
             console.log(data.sys.sunrise)
 
